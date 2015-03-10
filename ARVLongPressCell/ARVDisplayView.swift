@@ -12,6 +12,7 @@ class ARVDisplayView: UIView {
     var blur: UIVisualEffectView!
     var cellFrame: CGRect!
     var cell: UIView!
+    var toolBar: UIToolbar!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,6 +32,17 @@ class ARVDisplayView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: "hideWhenTapped:")
         blur.addGestureRecognizer(tap)
         self.addSubview(self.blur)
+        
+        self.toolBar = UIToolbar(frame: CGRectMake(0, self.frame.size.height-120, self.frame.size.width, 44))
+        self.toolBar.backgroundColor = UIColor.clearColor()
+        self.toolBar.setBackgroundImage(UIImage(),forToolbarPosition: UIBarPosition.Any,            barMetrics: UIBarMetrics.Default)
+        self.toolBar.tintColor = UIColor.whiteColor()
+        self.toolBar.setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)
+        self.addSubview(self.toolBar)
+        
+        let bb1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: nil)
+        self.toolBar.setItems([bb1], animated: false)
+        self.toolBar.alpha = 0
     }
     
     func showView(cell:UIView){
@@ -43,7 +55,7 @@ class ARVDisplayView: UIView {
         self.cell.clipsToBounds = true
         self.cellFrame = frame
         self.addSubview(self.cell)
-        
+        self.userInteractionEnabled = false
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
 
             var frame = self.cell.frame
@@ -51,24 +63,28 @@ class ARVDisplayView: UIView {
             self.cell.frame = frame
             
             self.blur.alpha = 1
+            self.toolBar.alpha = 1
             
             }) { (finished:Bool) -> Void in
-            
+                    self.userInteractionEnabled = true
         }
         
     }
     
     func hideWhenTapped(tap:UITapGestureRecognizer){
         
+        self.userInteractionEnabled = false
         UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             
             self.cell.frame = self.cellFrame
             self.blur.alpha = 0
+            self.toolBar.alpha = 0
             
             }) { (finished:Bool) -> Void in
             
                 self.cell.removeFromSuperview()
                 self.removeFromSuperview()
+                self.userInteractionEnabled = true
         }
     }
     /*
