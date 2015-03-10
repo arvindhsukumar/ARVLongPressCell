@@ -13,6 +13,8 @@
 		D481666F1AADFF840089700F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D481666E1AADFF840089700F /* Images.xcassets */; };
 		D48166721AADFF840089700F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48166701AADFF840089700F /* LaunchScreen.xib */; };
 		D481667E1AADFF840089700F /* ARVLongPressCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481667D1AADFF840089700F /* ARVLongPressCellTests.swift */; };
+		D481668B1AAE01C60089700F /* ARVTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481668A1AAE01C60089700F /* ARVTableViewController.swift */; };
+		D481668D1AAE029D0089700F /* ARVDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481668C1AAE029D0089700F /* ARVDisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		D48166771AADFF840089700F /* ARVLongPressCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARVLongPressCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D481667C1AADFF840089700F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D481667D1AADFF840089700F /* ARVLongPressCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVLongPressCellTests.swift; sourceTree = "<group>"; };
+		D481668A1AAE01C60089700F /* ARVTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVTableViewController.swift; sourceTree = "<group>"; };
+		D481668C1AAE029D0089700F /* ARVDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVDisplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				D481666E1AADFF840089700F /* Images.xcassets */,
 				D48166701AADFF840089700F /* LaunchScreen.xib */,
 				D48166651AADFF840089700F /* Supporting Files */,
+				D48166891AAE01B40089700F /* New Group */,
 			);
 			path = ARVLongPressCell;
 			sourceTree = "<group>";
@@ -110,6 +115,15 @@
 				D481667C1AADFF840089700F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D48166891AAE01B40089700F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				D481668A1AAE01C60089700F /* ARVTableViewController.swift */,
+				D481668C1AAE029D0089700F /* ARVDisplayView.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D481668B1AAE01C60089700F /* ARVTableViewController.swift in Sources */,
+				D481668D1AAE029D0089700F /* ARVDisplayView.swift in Sources */,
 				D481666A1AADFF840089700F /* ViewController.swift in Sources */,
 				D48166681AADFF840089700F /* AppDelegate.swift in Sources */,
 			);
